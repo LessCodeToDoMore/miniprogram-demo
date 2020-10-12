@@ -1,7 +1,8 @@
 textarea {
-    width: 350px;
-    padding: 13px 0;
+    width: 700rpx;
+    padding: 25rpx 0;
 }
 .textarea-wrp {
-    padding: 0 13px;
+    padding: 0 25rpx;
+    background-color: #fff;
 }

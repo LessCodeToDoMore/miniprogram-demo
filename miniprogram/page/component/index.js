@@ -35,7 +35,7 @@ Page({
         id: 'media',
         name: '媒体组件',
         open: false,
-        pages: ['image', 'video', 'camera', 'live-pusher', 'live-player']
+        pages: ['image', 'audio', 'video', 'camera']
       }, {
         id: 'map',
         name: '地图',
@@ -45,32 +45,14 @@ Page({
         id: 'canvas',
         name: '画布',
         open: false,
-        pages: ['canvas', 'canvas-2d', 'webgl']
+        pages: ['canvas']
       }, {
         id: 'open',
         name: '开放能力',
         open: false,
         pages: ['ad', 'open-data', 'web-view']
-      }, {
-        id: 'obstacle-free',
-        name: '无障碍访问',
-        open: false,
-        pages: ['aria-component']
       }
-    ],
-    theme: 'light'
-  },
-
-  onLoad() {
-    this.setData({
-      theme: wx.getSystemInfoSync().theme || 'light'
-    })
-
-    if (wx.onThemeChange) {
-      wx.onThemeChange(({ theme }) => {
-        this.setData({ theme })
-      })
-    }
+    ]
   },
 
   kindToggle(e) {

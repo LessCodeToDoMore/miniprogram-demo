@@ -8,6 +8,10 @@ icon{
     text-align: center;
     padding: 36px 10px;
 }
+.weui-grid:hover {
+    background-color: #F8F8F8;
+    opacity: 1;
+}
 
 .page__bd {
     padding-left: 15px;
@@ -30,7 +34,7 @@ icon{
     box-sizing: border-box;
 }
 .icon-name {
-    font-size: 12px;
+    font-size: 24rpx;
     overflow: hidden;
     white-space:nowrap;
     text-overflow:ellipsis; 

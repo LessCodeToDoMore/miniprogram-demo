@@ -1,10 +1,4 @@
 Page({
-    onShareAppMessage() {
-        return {
-          title: 'toast',
-          path: 'page/weui/example/toast/toast'
-        }
-      },
     openToast: function () {
         wx.showToast({
             title: '已完成',

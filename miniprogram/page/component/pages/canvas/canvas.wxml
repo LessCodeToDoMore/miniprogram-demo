@@ -5,17 +5,8 @@
   <template is="head" data="{{title: 'canvas'}}"/>
 
   <view class="page-body">
-    <block wx:if="{{canIUse}}">
-      <view class="page-section">
-        <view class="page-section-spacing">
-          <view class="page-body-wrapper">
-            <canvas canvas-id="canvas" class="canvas"></canvas>
-          </view>
-        </view>
-      </view>
-    </block>
-    <view wx:else style="margin: 15px; text-align:center">
-      微信版本过低，暂不支持本功能
+    <view class="page-body-wrapper">
+      <canvas canvas-id="canvas" class="canvas"></canvas>
     </view>
   </view>
 

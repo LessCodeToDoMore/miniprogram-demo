@@ -1,12 +1,4 @@
-import CustomPage from '../../base/CustomPage'
-
-CustomPage({
-    onShareAppMessage() {
-        return {
-          title: 'half-screen-dialog',
-          path: 'page/weui/example/half-screen-dialog/half-screen-dialog'
-        }
-      },
+Page({
     data: {
         typeF: false,
         typeS: false,

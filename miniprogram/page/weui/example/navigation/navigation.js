@@ -1,12 +1,4 @@
-import CustomPage from '../../base/CustomPage'
-
-CustomPage({
-    onShareAppMessage() {
-        return {
-          title: 'navigation',
-          path: 'page/weui/example/navigation/navigation'
-        }
-      },
+Page({
     data: {
         loading: false,
         color: '#000',

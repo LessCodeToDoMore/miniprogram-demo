@@ -122,13 +122,11 @@ Component({
         loading: {
             type: Boolean,
             value: false
-				},
-				// 显示隐藏的时候opacity动画效果
+        },
         animated: {
             type: Boolean,
             value: true
         },
-        // 显示隐藏导航，隐藏的时候navigation-bar的高度占位还在
         show: {
             type: Boolean,
             value: true,
@@ -142,51 +140,45 @@ Component({
     data: {
         displayStyle: ''
     },
-    attached() {
-        const isSupport = !!wx.getMenuButtonBoundingClientRect;
-        const rect = wx.getMenuButtonBoundingClientRect ? wx.getMenuButtonBoundingClientRect() : null;
+    attached: function attached() {
+        var _this = this;
+
+        var isSupport = !!wx.getMenuButtonBoundingClientRect;
+        var rect = wx.getMenuButtonBoundingClientRect ? wx.getMenuButtonBoundingClientRect() : null;
         wx.getSystemInfo({
-          success: res => {
-            const ios = !!(res.system.toLowerCase().search('ios') + 1);
-            this.setData({
-              ios,
-              statusBarHeight: res.statusBarHeight,
-              innerWidth: isSupport ? `width:${rect.left}px` : '',
-              innerPaddingRight: isSupport ? `padding-right:${res.windowWidth - rect.left}px` : '',
-              leftWidth: isSupport ? `width:${res.windowWidth - rect.left}px` : ''
-            });
-          }
+            success: function success(res) {
+                var ios = !!(res.system.toLowerCase().search('ios') + 1);
+                _this.setData({
+                    ios: ios,
+                    statusBarHeight: res.statusBarHeight,
+                    innerWidth: isSupport ? 'width:' + rect.left + 'px' : '',
+                    innerPaddingRight: isSupport ? 'padding-right:' + (res.windowWidth - rect.left) + 'px' : '',
+                    leftWidth: isSupport ? 'width:' + (res.windowWidth - rect.left) + 'px' : ''
+                });
+            }
         });
-      },
+    },
 
     methods: {
-			_showChange(show) {
-				const animated = this.data.animated;
-				let displayStyle = '';
-	
-				if (animated) {
-					displayStyle = `opacity: ${show ? '1' : '0'};-webkit-transition:opacity 0.5s;transition:opacity 0.5s;`;
-				} else {
-					displayStyle = `display: ${show ? '' : 'none'}`;
-				}
-	
-				this.setData({
-					displayStyle
-				});
-			},
-			back() {
-				const data = this.data;
-	
-				if (data.delta) {
-					wx.navigateBack({
-						delta: data.delta
-					});
-				}
-	
-				this.triggerEvent('back', {
-					delta: data.delta
-				}, {});
-			}
+        _showChange: function _showChange(show) {
+            var animated = this.data.animated;
+            var displayStyle = '';
+            if (animated) {
+                displayStyle = 'opacity: ' + (show ? '1' : '0') + ';-webkit-transition:opacity 0.5s;transition:opacity 0.5s;';
+            } else {
+                displayStyle = 'display: ' + (show ? '' : 'none');
+            }
+            this.setData({
+                displayStyle: displayStyle
+            });
+        },
+        back: function back() {
+            var data = this.data;
+            wx.navigateBack({
+                delta: data.delta
+            });
+            this.triggerEvent('back', { delta: data.delta }, {});
+        }
     }
 });
 

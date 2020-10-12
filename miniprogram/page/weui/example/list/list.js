@@ -1,11 +1,5 @@
 var base64 = require("../images/base64");
 Page({
-  onShareAppMessage() {
-    return {
-      title: 'list',
-      path: 'page/weui/example/list/list'
-    }
-  },
     onLoad: function(){
         this.setData({
             icon: base64.icon20,

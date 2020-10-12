@@ -1,12 +1,4 @@
-import CustomPage from '../../base/CustomPage'
-
-CustomPage({
-  onShareAppMessage() {
-    return {
-      title: 'loading',
-      path: 'page/weui/example/loading/loading'
-    }
-  },
+Page({
   data: {
     tips: '请稍后',
     show: true,

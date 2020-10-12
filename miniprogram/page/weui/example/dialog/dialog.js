@@ -1,12 +1,4 @@
-import CustomPage from '../../base/CustomPage'
-
-CustomPage({
-    onShareAppMessage() {
-        return {
-          title: 'dialog',
-          path: 'page/weui/example/dialog/dialog'
-        }
-      },
+Page({
     data: {
         dialogShow: false,
         showOneButtonDialog: false,

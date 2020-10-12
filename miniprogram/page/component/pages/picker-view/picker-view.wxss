@@ -1,6 +1,6 @@
 .selected-date {
   text-align: center;
-  margin: 15px;
+  margin: 30rpx;
 }
 
 .icon-container {
@@ -11,6 +11,6 @@
 }
 
 .picker-icon {
-  width: 25px;
-  height: 25px;
+  width: 50rpx;
+  height: 50rpx;
 }

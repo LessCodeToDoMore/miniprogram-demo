@@ -3,7 +3,5 @@
     "mp-uploader": "../../components/uploader/uploader",
     "mp-cells": "../../components/cells/cells",
     "mp-cell": "../../components/cell/cell"
-  },
-  "navigationBarTitleText": "uploader"
-
+  }
 }

@@ -15,12 +15,6 @@ function _next(){
 }
 
 Page({
-    onShareAppMessage() {
-        return {
-          title: 'progress',
-          path: 'page/weui/example/progress/progress'
-        }
-      },
     data: {
         progress: 0,
         disabled: false

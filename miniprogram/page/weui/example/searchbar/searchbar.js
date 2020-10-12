@@ -1,12 +1,4 @@
-import CustomPage from '../../base/CustomPage'
-
-CustomPage({
-    onShareAppMessage() {
-        return {
-          title: 'searchbar',
-          path: 'page/weui/example/searchbar/searchbar'
-        }
-      },
+Page({
     data: {
         inputShowed: false,
         inputVal: "",

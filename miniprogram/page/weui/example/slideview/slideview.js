@@ -1,14 +1,6 @@
 var base64 = require("../images/base64");
-import CustomPage from '../../base/CustomPage'
-
-CustomPage({
-  onShareAppMessage() {
-    return {
-      title: 'sliderview',
-      path: 'page/weui/example/sliderview/sliderview'
-    }
-  },
-      onLoad: function(){
+Page({
+    onLoad: function(){
         this.setData({
             icon: base64.icon20,
             slideButtons: [{

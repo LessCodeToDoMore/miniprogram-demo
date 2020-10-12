@@ -1,12 +1,4 @@
-import CustomPage from '../../base/CustomPage'
-
-CustomPage({   
-    onShareAppMessage() {
-        return {
-          title: 'msg',
-          path: 'page/weui/example/msg/msg'
-        }
-      }, 
+Page({
     openSuccess: function () {
         wx.navigateTo({
             url: 'msg_success'

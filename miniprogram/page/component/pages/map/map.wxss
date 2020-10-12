@@ -1,8 +1,8 @@
 .page-section-title {
-  margin-bottom: 15px;
+  margin-bottom: 30rpx;
 }
 
 .navigator {
-  color: var(--weui-LINK);
+  color: #1AAD19;
   display: inline-block;
 }

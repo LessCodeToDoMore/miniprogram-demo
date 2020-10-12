@@ -32,8 +32,8 @@ Page({
             zh: '客服消息',
             url: 'custom-message/custom-message'
           }, {
-            zh: '订阅消息',
-            url: 'subscribe-message/subscribe-message'
+            zh: '模板消息',
+            url: 'template-message/template-message'
           }, {
             zh: '收货地址',
             url: 'choose-address/choose-address'
@@ -109,9 +109,6 @@ Page({
             zh: '获取手机系统信息',
             url: 'get-system-info/get-system-info'
           }, {
-            zh: '获取手机设备电量',
-            url: 'get-battery-info/get-battery-info'
-          }, {
             zh: '监听重力感应数据',
             url: 'on-accelerometer-change/on-accelerometer-change'
           }, {
@@ -150,16 +147,6 @@ Page({
           }
         ]
       }, {
-        id: 'performance',
-        name: '性能',
-        open: false,
-        pages: [
-          {
-            zh: '获取性能数据',
-            url: 'get-performance/get-performance'
-          }
-        ]
-      }, {
         id: 'network',
         name: '网络',
         open: false,
@@ -176,12 +163,6 @@ Page({
           }, {
             zh: '下载文件',
             url: 'download-file/download-file'
-          }, {
-            zh: 'UDPSocket',
-            url: 'udp-socket/udp-socket'
-          },{
-            zh: 'mDNS',
-            url: 'mdns/mdns'
           }
         ]
       }, {
@@ -192,9 +173,6 @@ Page({
           {
             zh: '图片',
             url: 'image/image'
-          }, {
-            zh: '音频',
-            url: 'audio/audio'
           }, {
             zh: '录音',
             url: 'voice/voice'
@@ -207,10 +185,7 @@ Page({
           }, {
             zh: '视频',
             url: 'video/video'
-          },{
-            zh: '音视频合成',
-            url: 'media-container/media-container'
-          },{
+          }, {
             zh: '动态加载字体',
             url: 'load-font-face/load-font-face'
           }
@@ -234,49 +209,14 @@ Page({
       }, {
         id: 'storage',
         name: '数据',
-        pages: [{
-          zh: '本地存储',
-          url: 'storage/storage'
-        }, {
-          zh: '周期性更新',
-          url: 'get-background-fetch-data/get-background-fetch-data'
-
-        }, {
-          zh: '数据预拉取',
-          url: 'get-background-prefetch-data/get-background-prefetch-data'
-        }],
+        url: 'storage/storage'
       }, {
         id: 'worker',
         name: '多线程',
         url: 'worker/worker'
-      }, {
-        id: 'framework',
-        name: '框架',
-        pages: [{
-          zh: '双向绑定',
-          url: 'two-way-bindings/two-way-bindings',
-        }, {
-          zh: 'WXS',
-          url: 'wxs/wxs'
-        }, {
-          zh: '屏幕旋转',
-          url: 'resizable/resizable'
-        }]
       }
     ],
     isSetTabBarPage: false,
-    theme: 'light'
-  },
-  onLoad() {
-    this.setData({
-      theme: wx.getSystemInfoSync().theme || 'light'
-    })
-
-    if (wx.onThemeChange) {
-      wx.onThemeChange(({ theme }) => {
-        this.setData({ theme })
-      })
-    }
   },
   onShow() {
     this.leaveSetTabBarPage()
@@ -291,7 +231,7 @@ Page({
       if (list[i].id === id) {
         if (list[i].url) {
           wx.navigateTo({
-            url: '../../packageAPI/pages/' + list[i].url
+            url: 'pages/' + list[i].url
           })
           return
         }

@@ -3,9 +3,9 @@ progress{
 }
 .progress-box{
   display: flex;
-  height: 25px;
-  margin-bottom: 30px;
+  height: 50rpx;
+  margin-bottom: 60rpx;
 }
 .progress-cancel{
-  margin-left: 20px;
+  margin-left: 40rpx;
 }

@@ -20,13 +20,8 @@ Page({
     this.videoContext = wx.createVideoContext('myVideo')
   },
 
-  onHide() {
-
-  },
-
   inputValue: '',
   data: {
-    enableAutoRotation: true,
     src: '',
     danmuList:
     [{
@@ -37,7 +32,7 @@ Page({
       text: '第 3s 出现的弹幕',
       color: '#ff00ff',
       time: 3
-    }],
+    }]
   },
 
   bindInputBlur(e) {
@@ -58,17 +53,6 @@ Page({
     })
   },
 
-  bindVideoEnterPictureInPicture() {
-    console.log('进入小窗模式')
-  },
-
-  bindVideoLeavePictureInPicture() {
-    console.log('退出小窗模式')
-  },
-
-  bindPlayVideo() {
-    this.videoContext.play()
-  },
   bindSendDanmu() {
     this.videoContext.sendDanmu({
       text: this.inputValue,
@@ -79,10 +63,5 @@ Page({
   videoErrorCallback(e) {
     console.log('视频错误信息:')
     console.log(e.detail.errMsg)
-  },
-  handleSwitchChange(e) {
-    this.setData({
-      enableAutoRotation: e.detail.value
-    })
   }
 })

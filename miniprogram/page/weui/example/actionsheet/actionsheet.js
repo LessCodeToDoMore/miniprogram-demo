@@ -1,12 +1,4 @@
-import CustomPage from '../../base/CustomPage'
-
-CustomPage({
-    onShareAppMessage() {
-        return {
-            title: 'actionsheet',
-            path: 'page/weui/example/actionsheet/actionsheet'
-        }
-    },
+Page({
     open: function(){
         wx.showActionSheet({
             itemList: ['A', 'B', 'C'],

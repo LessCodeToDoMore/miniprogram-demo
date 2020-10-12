@@ -112,22 +112,17 @@ Component({
         }
     },
     methods: {
-			tabChange(e) {
-				const {
-					index
-				} = e.currentTarget.dataset;
-	
-				if (index === this.data.current) {
-					return;
-				}
-				this.setData({
-					current: index
-				});
-				this.triggerEvent('change', {
-					index,
-					item: this.data.list[index]
-				});
-			}
+        tabChange: function tabChange(e) {
+            var index = e.currentTarget.dataset.index;
+
+            if (index === this.data.current) {
+                return;
+            }
+            this.setData({
+                current: index
+            });
+            this.triggerEvent('change', { index: index, item: this.data.list[index] });
+        }
     }
 });
 

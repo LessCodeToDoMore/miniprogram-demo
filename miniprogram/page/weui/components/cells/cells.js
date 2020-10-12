@@ -122,14 +122,12 @@ Component({
     relations: {
         '../cell/cell': {
             type: 'descendant',
-
-            linked(target) {
+            linked: function linked(target) {
                 if (!this.data.firstItem) {
-                this.data.firstItem = target;
+                    this.data.firstItem = target;
                 }
-
                 if (target !== this.data.firstItem) {
-                target.setOuterClass('weui-cell_wxss');
+                    target.setOuterClass('weui-cell_wxss');
                 }
             }
         },
@@ -138,38 +136,36 @@ Component({
         },
         '../checkbox-group/checkbox-group': {
             type: 'descendant',
-            linked(target) {
+            linked: function linked(target) {
                 this.setData({
-                  checkboxCount: this.data.checkboxCount + 1,
-                  checkboxIsMulti: target.data.multi
+                    checkboxCount: this.data.checkboxCount + 1,
+                    checkboxIsMulti: target.data.multi
                 });
-              },
-        
-              unlinked(target) {
+            },
+            unlinked: function unlinked(target) {
                 this.setData({
-                  checkboxCount: this.data.checkboxCount - 1,
-                  checkboxIsMulti: target.data.multi
+                    checkboxCount: this.data.checkboxCount - 1,
+                    checkboxIsMulti: target.data.multi
                 });
-              }
+            }
         }
     },
     methods: {
-        setCellMulti(multi) {
+        setCellMulti: function setCellMulti(multi) {
             this.setData({
-              checkboxIsMulti: multi
+                checkboxIsMulti: multi
             });
-          },
-          setCellsClass(className) {
+        },
+        setCellsClass: function setCellsClass(className) {
             this.setData({
-              childClass: className
+                childClass: className
             });
-          },
-      
-          setOuterClass(className) {
+        },
+        setOuterClass: function setOuterClass(className) {
             this.setData({
-              outerClass: className
+                outerClass: className
             });
-          }
+        }
     }
 });
 

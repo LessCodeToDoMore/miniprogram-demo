@@ -77,29 +77,15 @@ Page({
         ]
       }
     ],
-    theme: 'light'
-  },
-  onLoad() {
-    this.setData({
-      theme: wx.getSystemInfoSync().theme || 'light'
-    })
-
-    if (wx.onThemeChange) {
-      wx.onThemeChange(({ theme }) => {
-        this.setData({ theme })
-      })
-    }
   },
   kindToggle(e) {
-    const id = e.currentTarget.id; 
-    const list = this.data.list
-    console.log(id, list)
+    const id = e.currentTarget.id; const
+      list = this.data.list
     for (let i = 0, len = list.length; i < len; ++i) {
       if (list[i].id === id) {
         if (list[i].url) {
-          console.log(list[i].url)
           wx.navigateTo({
-            url: '../../packageCloud/pages/' + list[i].url
+            url: 'pages/' + list[i].url
           })
           return
         }
